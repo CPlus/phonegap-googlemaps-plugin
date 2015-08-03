@@ -713,7 +713,7 @@ public class PluginMarker extends MyPlugin {
             if (iconUrl.indexOf("./") == 0) {
               iconUrl = iconUrl.replace("./", "www/");
             }
-            AssetManager assetManager = PluginMarker.this.cordova.getActivity().getAssets();
+            AssetManager assetManager = PluginMarker.this.activity.getAssets();
             InputStream inputStream;
             try {
               inputStream = assetManager.open(iconUrl);

@@ -13,6 +13,7 @@ import org.json.JSONException;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
+import android.app.Activity;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Circle;
@@ -24,6 +25,7 @@ import com.google.android.gms.maps.model.TileOverlay;
 
 public class MyPlugin extends CordovaPlugin implements MyPluginInterface  {
   protected HashMap<String, Object> objects;
+  protected Activity activity;
 
   public GoogleMaps mapCtrl = null;
   public GoogleMap map = null;
@@ -38,6 +40,7 @@ public class MyPlugin extends CordovaPlugin implements MyPluginInterface  {
   @Override
   public void initialize(CordovaInterface cordova, final CordovaWebView webView) {
     super.initialize(cordova, webView);
+    this.activity = cordova.getActivity();
     this.objects = new HashMap<String, Object>();
   }
   @Override
